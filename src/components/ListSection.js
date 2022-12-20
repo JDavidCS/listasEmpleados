@@ -10,8 +10,6 @@ function ListSection({reload, setReload}){
     // UseEffect que recargará con el cambio del useState reload
     useEffect(() => {
 
-        console.log('entró');
-
         // peticion a la API
         fetch('http://localhost:3030/api/employees')
         .then((res)=> res.json())

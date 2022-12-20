@@ -23,7 +23,6 @@ function Modal({reload, setReload}){
             Rdate: time
         }
         if(!name || !lastName || !status){
-            console.error('No se han llenado los datos necesarios');
             window.alert('No se llenaron los campos requeridos');
         }
         // Editar un registro
@@ -39,7 +38,6 @@ function Modal({reload, setReload}){
                 })
             .then(res => res.json())
             .then(json => {
-                console.log(json)
                 setReload(!reload);
             })
             .catch(err => console.log(err));
@@ -57,7 +55,6 @@ function Modal({reload, setReload}){
                 })
             .then(res => res.json())
             .then(json => {
-                console.log(json);
                 setReload(!reload);
             })
             .catch(err => console.log(err));
@@ -90,7 +87,6 @@ function Modal({reload, setReload}){
             })
             .then(res => res.json())
             .then(json => {
-                console.log(json)
                 setReload(!reload);
             })
             .catch(err => console.log(err));
