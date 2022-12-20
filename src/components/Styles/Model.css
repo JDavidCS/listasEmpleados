@@ -1,0 +1,310 @@
+/* Configuracion general */
+*{
+    box-sizing: border-box;
+}
+
+.background{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #dfdede;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.Main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100vw;
+    max-width: 80vw;
+    min-width: 98vmin;
+    margin: 0 20px;
+}
+
+/* Seccion Superior ------- <Nav/> */
+.navContent{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 20vmin;
+    height: 20vmin;
+    padding-top: 6vmin;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/* Barra de busqueda */
+.searchBar{
+    position: relative;
+    height: 44px;
+    height: 60%;
+    min-height: 44px;
+    width: 70%;
+    max-width: 80vmin;
+    background-color: #fff;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+.searchBar:focus-within{
+    box-shadow: 0 1px 5px 0px #aaa;
+}
+
+.searchInput{
+    background: none;
+    border: none;
+    height: 80%;
+    width: 85%;
+    margin-left: 20px;
+    font-size: 18px;
+    padding-left: 20px;
+}
+.searchInput:focus-visible{
+    border: none;
+    outline: none;
+}
+.buttonSearch{
+    height: 100%;
+    background: none;
+    border: none;
+    box-sizing: content-box;
+    padding-right: 25px;
+}
+.buttonSearch:hover{
+    cursor: pointer;
+}
+
+.navContent .insertButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: calc(10vmin + 3px);
+    width: calc(10vmin + 3px);
+    min-width: calc(10vmin + 3px);
+    border: none;
+    padding: none;
+    background-color: #fff;
+    border-radius: 30%;
+    flex-grow: 0;
+    cursor: pointer;
+}
+.insertButton svg{
+    width: 80%;
+    height: 80%;
+}
+
+/* Sección De la Tabla -------- <ListSection/> */
+.listSection{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #fff;
+    width: 100%;
+    flex-grow: 1;
+    height: 40%;
+}
+
+/* Barra superior ------- <ListOptions/> */
+.listOptions{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+    padding: 0 20px;
+    overflow-x: scroll;
+}
+/* Etiquetas para filtrar */
+.filterTabs{
+    position: relative;
+    width: max-content;
+    padding: 0 20px;
+    height: 42%;
+    background-color: #D9D9D9;
+    border-radius: 100px;
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px 10px 5px;
+    cursor: pointer;
+    order: 1;
+    color: #323232;
+    font-size: 14px;
+}
+.filterTabs p{
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0;
+    display: inline-block;
+}
+.filterTabs[clr="Verde"]{
+    background-color: #7BED80;
+}
+.filterTabs[clr="Amarillo"]{
+    background-color: #FED79E;
+}
+
+.listOptions input{
+    display: none;
+}
+.listOptions input:checked + label{
+    height: 50%;
+    font-weight: bold;
+}
+
+.listOptions div{
+    transition: transform 200ms;
+    user-select: none;
+}
+.listOptions :hover{
+    transform: scale(0.95);
+}
+
+.reload{
+    position: relative;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 100px;
+    margin-left: auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 2;
+}
+.reload svg{
+    fill: #555;
+    height: 90%;
+    width: 90%;
+}
+
+/* Registros de la Tabla */
+.listRows{
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}
+.row{
+    position: relative;
+    background-color: #F0F0F0;
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+    grid-template-rows: 44px;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px 0 7vmin;
+    height: 44px;
+    border-bottom: solid #aaa 1px;
+    z-index: 0;
+}
+.row:hover{
+    background-color: #FAFAFA;
+    box-shadow: 0 1px 5px 0px #aaa;
+    z-index: 1;
+}
+
+.EmplName, .Status, .date{
+    margin: 0;
+    display: inline-block;
+}
+
+.Status, .date{
+    color: #797979;
+}
+
+.EmplName, .Status{
+    text-align: left;
+}
+
+.Status{
+    position: relative;
+    display: block;
+    align-items: center;
+}
+.Status::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    height: 8px;
+    width: 8px;
+    border-radius: 100%;
+    transform: translateY(-4px);
+}
+.Status[status='Trabajando']::before{
+    background-color: #118916;
+}
+.Status[status='Descanso']::before{
+    background-color: #E18700;
+}
+.Status[status='Ausente']::before{
+    background-color: #A5A5A5;
+}
+
+.date{
+    text-align: right;
+    font-size: 14px;
+}
+
+.row-edit{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 44px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.row-edit svg{
+    height: 70%;
+    width: auto;
+    fill: #555
+}
+
+.row:hover .row-edit{
+    display: flex;
+}
+
+
+@media (max-width:550px) {
+    .navContent{
+        height: 15vmin;
+        padding-top: 0vmin;
+    }
+    .reload{
+        order: 0;
+        margin-left: 0;
+        margin-right: auto;
+    }
+}
+
+@media (max-width:550px) {
+    .row{
+        height: 56px;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 28px 28px;
+    }
+    .EmplName{
+        grid-row: 1/3;
+    }
+    .Status{
+        text-align: right;
+        padding-right: 20px;
+    }
+    .Status::before{
+        left: initial;
+        right: 0px;
+    }
+}

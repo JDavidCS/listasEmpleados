@@ -1,0 +1,126 @@
+/* Estilos del formulario */
+.newItemForm{
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    height: 300px;
+    transition: all 400ms linear;
+}
+.invisible{
+    height: 0px;
+}
+
+.form-Container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    height: 300px;
+    width: 100%;
+    align-content: center;
+}
+
+
+.form-Title{
+    display: flex;
+    align-items: flex-end;
+    justify-content: left;
+    width: 100%;
+    height: 40%;
+}
+.form-Title h2{
+    padding-left: 50px;
+    padding-bottom: 30px;
+    text-align: left;
+    grid-column: 1/4;
+    font-size: 35px;
+    margin: 0;
+}
+
+.form-Input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 95%;
+    min-height: max-content;
+    flex-grow: 2;
+}
+
+.inputs{
+    width: 100%;
+    height: max-content;
+    background-color: #dfdede;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr) minmax(200px, 2fr) minmax(100px, 1fr) minmax(100px, 1fr));
+    padding: 15px;
+    gap: 5px;
+    align-content: center;
+}
+.inputs select{
+    background-color: #f0f0f0;
+}
+.inputs input, select{
+    height: 40px;
+    font-size: 16px;
+    border: none;
+}
+.inputs input[type='time']{
+    text-align: center;
+}
+.buttons{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: max-content;
+}
+.form-Button{
+    width: 100px;
+    padding: 10px 20px;
+    margin: 10px;
+    background: #aaa;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.form-Button.Añadir{
+    background: #118916;
+    color: #fff;
+}
+.form-Button.Limpiar{
+    background: #D9D9D9;
+    color: #000;
+}
+.form-Button.Editar{
+    background: #3C67FF;
+    color: #fff;
+}
+.form-Button.Eliminar{
+    background: #FF3A3A;
+    color: #fff;
+}
+
+
+
+@media screen and (max-width: 850px) {
+    .inputs{
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .form-Title{
+        height: max-content;
+    }
+    .form-Title h2{
+        font-size: 20px;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .inputs{
+        grid-template-columns: 1fr;
+    }
+}
