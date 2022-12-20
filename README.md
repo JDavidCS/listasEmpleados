@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## About this Proyect
+This app will need the [NodeServer](https://github.com/JDavidCS/NodeServer) proyect, which is its the backend server.
+
 ## Available Scripts
 
 In the project directory.
